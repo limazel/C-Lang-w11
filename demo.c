@@ -37,6 +37,17 @@ Zaman zaman(long long ms) {
     return result;
 }
 
+Zaman zaman2(long long ms) {
+    Zaman result;
+    result.h = ms / (60*60*1000);
+    ms = ms % (60*60*1000);
+    result.m = ms / (60*1000);
+    ms = ms % (60*1000);
+    result.s = ms / 1000;
+    result.ms = ms % 1000;
+    return result;
+}
+
 // Sonra fonksiyon tanımı
 Zaman zamanFark(Zaman z1, Zaman z2) {
     Zaman fark;
@@ -78,6 +89,7 @@ int main() {
     long long ms1;
     scanf("%lld", &ms1);
     printf("%lld milisaniye %d saat %d dakika %d saniye %d milisaniye\n", ms1, zaman(ms1).h, zaman(ms1).m, zaman(ms1).s, zaman(ms1).ms);
+    printf("%lld milisaniye %d saat %d dakika %d saniye %d milisaniye\n", ms1, zaman2(ms1).h, zaman2(ms1).m, zaman2(ms1).s, zaman2(ms1).ms);
     return 0;
 }
 // Bu kod, iki zaman arasındaki farkı hesaplar ve sonucu ekrana yazdırır.
